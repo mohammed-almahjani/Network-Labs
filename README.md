@@ -1,49 +1,81 @@
-# 🌐 Network Labs
+# 🌐 OSPF Lab
 
-Practical networking labs and configurations using:
+## 📚 Objective
 
-- Cisco
-- MikroTik
-- Packet Tracer
-- EVE-NG
-- GNS3
+Configure OSPF routing between routers and verify network connectivity.
 
 ---
 
-# 📚 Topics
+# 🛠️ Topology
 
-## Routing
-- Static Routing
-- OSPF
-- RIP
-
-## Switching
-- VLANs
-- Trunking
-- STP
-
-## MikroTik
-- DHCP
-- NAT
-- Firewall
-- Queue Management
-
-## Network Security
-- ACL
-- Basic Firewall Rules
-- Port Security
+- Router1
+- Router2
+- Router3
 
 ---
 
-# 🛠️ Tools Used
+# ⚙️ IP Addressing
 
-- Cisco Packet Tracer
-- EVE-NG
-- GNS3
-- MikroTik WinBox
+| Device | Interface | IP Address |
+|--------|-----------|------------|
+| R1 | G0/0 | 192.168.1.1/24 |
+| R2 | G0/0 | 192.168.2.1/24 |
+| R3 | G0/0 | 192.168.3.1/24 |
 
 ---
 
-# 🚀 Goal
+# ⚙️ OSPF Configuration
 
-Building practical networking skills through real labs and configurations.
+## Router 1
+
+```bash
+enable
+configure terminal
+
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+```
+
+## Router 2
+
+```bash
+enable
+configure terminal
+
+router ospf 1
+network 192.168.2.0 0.0.0.255 area 0
+```
+
+## Router 3
+
+```bash
+enable
+configure terminal
+
+router ospf 1
+network 192.168.3.0 0.0.0.255 area 0
+```
+
+---
+
+# 🔍 Verification Commands
+
+```bash
+show ip ospf neighbor
+show ip route
+```
+
+---
+
+# 🎯 Result
+
+All routers successfully exchanged routing information using OSPF.
+
+---
+
+# 🧠 Skills Learned
+
+- OSPF Configuration
+- Dynamic Routing
+- Router Communication
+- Route Verification
